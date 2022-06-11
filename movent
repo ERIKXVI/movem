@@ -1,0 +1,19 @@
+--speedhack below this point
+    Toggles.SpeedToggle:OnChanged(function()
+        if Toggles.SpeedToggle.Value == true then
+            getgenv().WalkSpeedValue = 100;
+            local Player = game:service'Players'.LocalPlayer;
+            Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+            Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+            end)
+            Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end
+        if Toggles.SpeedToggle.Value == false then
+            getgenv().WalkSpeedValue = 16;
+            local Player = game:service'Players'.LocalPlayer;
+            Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+            Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+            end)
+            Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end
+    end)
